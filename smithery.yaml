@@ -1,0 +1,18 @@
+# Smithery configuration file
+# https://smithery.ai/docs/config
+
+build:
+  dockerBuildPath: .
+
+startCommand:
+  type: websocket
+  port: 3000
+  configSchema:
+    # JSON Schema, определяющая параметры конфигурации для MCP
+    type: object
+    required:
+      - braveApiKey
+    properties:
+      braveApiKey:
+        type: string
+        description: "API key for Brave Search" 

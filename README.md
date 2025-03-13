@@ -14,6 +14,8 @@ OpenDeepSearch is a powerful research tool that performs comprehensive, in-depth
 - **Synthesis**: Combines findings into a coherent, well-structured report
 - **Citations**: Includes sources for all information in the report
 - **MCP Integration**: Seamlessly integrates with Claude Desktop, Cursor, and other MCP clients
+- **WebSockets**: Supports integration with Smithery and other MCP clients
+- **Publication**: Allows publishing the research tool on the Smithery platform for easy access
 
 ## Installation
 
@@ -33,6 +35,35 @@ npm install -g open-deep-research
 ```bash
 BRAVE_API_KEY=your_api_key npx open-deep-research
 ```
+
+### Local Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/tositon/open-deep-research.git
+cd open-deep-research
+
+# Install dependencies
+npm install
+
+# Build the project
+npm run build
+
+# Run with Brave Search API
+BRAVE_API_KEY=your_api_key npm start
+```
+
+### Installation via Smithery
+
+```bash
+# Install for Claude
+npx @smithery/cli install open-deep-research --client claude
+
+# Install for Cursor
+npx @smithery/cli install open-deep-research --client cursor
+```
+
+When installing via Smithery, you will be prompted to enter a Brave Search API key.
 
 ## Usage
 
@@ -87,7 +118,7 @@ Make sure to set the `BRAVE_API_KEY` environment variable before running Cursor.
 ### Setup
 
 ```bash
-git clone https://github.com/yourusername/open-deep-research.git
+git clone https://github.com/tositon/open-deep-research.git
 cd open-deep-research
 npm install
 ```
@@ -102,6 +133,43 @@ npm run build
 
 ```bash
 BRAVE_API_KEY=your_api_key npm run dev
+```
+
+## Testing
+
+### Testing with MCP Inspector
+
+To test the MCP server, you can use MCP Inspector:
+
+```bash
+# Install and run MCP Inspector
+npx @modelcontextprotocol/inspector
+
+# Run the server in another terminal
+BRAVE_API_KEY=your_api_key npm start
+```
+
+After running Inspector, open your browser and navigate to http://localhost:5173 for access to the testing interface.
+
+### Testing with Claude or Cursor
+
+After installing the server via Smithery or locally, you can use it with Claude Desktop or Cursor.
+
+## Publishing on Smithery
+
+To publish the server on the Smithery platform:
+
+1. Ensure the repository is hosted on GitHub and is public
+2. Register on the [Smithery](https://smithery.ai/) platform
+3. Authenticate via GitHub to connect with the repository
+4. Go to the "Deployments" tab on the server page
+5. Click the "Deploy on Smithery" button
+6. Follow the deployment setup instructions
+
+After publishing, users can install the server using the Smithery CLI:
+
+```bash
+npx @smithery/cli install open-deep-research --client claude
 ```
 
 ## Contributing
