@@ -15,4 +15,5 @@ startCommand:
     properties:
       braveApiKey:
         type: string
-        description: "API key for Brave Search" 
+        title: "Brave Search API Key"
+        description: "API ключ для доступа к Brave Search API. Получите его на https://brave.com/search/api/" 

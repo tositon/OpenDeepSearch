@@ -13,7 +13,10 @@
     "dev": "tsx src/index.ts",
     "lint": "eslint src --ext .ts",
     "format": "prettier --write \"src/**/*.ts\"",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "test": "./test-server.sh",
+    "clean": "rm -rf dist",
+    "rebuild": "npm run clean && npm run build"
   },
   "keywords": [
     "mcp",
@@ -30,6 +33,7 @@
     "@modelcontextprotocol/sdk": "^1.7.0",
     "axios": "^1.8.3",
     "chalk": "^5.4.1",
+    "dotenv": "^16.4.7",
     "uuid": "^9.0.1",
     "ws": "^8.18.1"
   },
@@ -47,10 +51,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/open-deep-research.git"
+    "url": "https://github.com/tositon/OpenDeepSearch.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/open-deep-research/issues"
+    "url": "https://github.com/tositon/OpenDeepSearch/issues"
   },
-  "homepage": "https://github.com/yourusername/open-deep-research#readme"
+  "homepage": "https://github.com/tositon/OpenDeepSearch#readme"
 }

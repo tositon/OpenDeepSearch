@@ -5,6 +5,9 @@
  * An open-source alternative to Perplexity Deep Research using MCP
  */
 
+// Загрузка переменных из .env файла
+import 'dotenv/config';
+
 import { WebSocketMCPServer } from './websocket/server.js';
 import chalk from 'chalk';
 
@@ -41,7 +44,9 @@ const server = new WebSocketMCPServer({
 
 // Start the server
 server.start().then(() => {
-  // Server started successfully, message is logged in the server class
+  console.log(chalk.green(`Server is running at http://localhost:${port}`));
+  console.log(chalk.yellow('Use Model Context Protocol Inspector to test the server:'));
+  console.log(chalk.yellow('npx @modelcontextprotocol/inspector'));
 }).catch((error: unknown) => {
   console.error(chalk.red('Error starting server:'), error);
   process.exit(1);

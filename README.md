@@ -139,21 +139,55 @@ BRAVE_API_KEY=your_api_key npm run dev
 
 ### Testing with MCP Inspector
 
-To test the MCP server, you can use MCP Inspector:
+Для тестирования MCP сервера можно использовать MCP Inspector, который предоставляет удобный интерфейс для взаимодействия с инструментами:
 
 ```bash
-# Install and run MCP Inspector
+# Установка и запуск MCP Inspector
 npx @modelcontextprotocol/inspector
 
-# Run the server in another terminal
+# Запуск сервера в другом терминале
 BRAVE_API_KEY=your_api_key npm start
 ```
 
-After running Inspector, open your browser and navigate to http://localhost:5173 for access to the testing interface.
+После запуска Inspector, откройте браузер и перейдите по адресу http://localhost:5173. Подключитесь к WebSocket серверу, используя URL `ws://localhost:3000`.
+
+### Примеры запросов для тестирования инструментов
+
+В интерфейсе MCP Inspector вы можете выбрать инструмент и настроить параметры запроса:
+
+#### Тестирование Brave Web Search
+
+```json
+{
+  "query": "latest quantum computing advancements",
+  "count": 5
+}
+```
+
+#### Тестирование Sequential Thinking
+
+```json
+{
+  "thought": "Начинаю анализ проблемы глобального потепления",
+  "thoughtNumber": 1,
+  "totalThoughts": 5,
+  "nextThoughtNeeded": true
+}
+```
+
+#### Тестирование Deep Research
+
+```json
+{
+  "query": "Сравнение различных источников возобновляемой энергии",
+  "action": "start",
+  "maxSubQuestions": 3
+}
+```
 
 ### Testing with Claude or Cursor
 
-After installing the server via Smithery or locally, you can use it with Claude Desktop or Cursor.
+После установки сервера через Smithery или локально, вы можете использовать его с Claude Desktop или Cursor, выбрав соответствующий MCP сервер в настройках.
 
 ## Publishing on Smithery
 
